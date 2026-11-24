@@ -1,0 +1,57 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.comments-title {
+  margin: 0;
+}
+
+/* the button that opens the add form (+ Add comment) */
+.add-open-button {
+  align-self: flex-start;
+  border-style: dashed;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+/* my comments have a colored line on the side */
+.comment-item.mine {
+  border-inline-start: 3px solid var(--accent);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-author {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.comment-body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.comment-item button {
+  padding: 3px 10px;
+  font-size: 14px;
+}

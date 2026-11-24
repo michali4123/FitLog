@@ -1,0 +1,51 @@
+/* the box of one item in a list (workout, album, post).
+   A thin gold line on the side. */
+.item-card {
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+/* on hover all the frame becomes gold */
+.item-card:hover {
+  border-color: var(--gold);
+}
+
+/* the selected item is highlighted */
+.item-card.selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 25%, transparent);
+}
+
+.item-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.item-card.selected .item-row {
+  background: color-mix(in srgb, var(--gold) 8%, transparent);
+}
+
+/* the number of the item */
+.item-id {
+  min-width: 36px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.item-title {
+  flex: 1;
+  font-weight: 500;
+}
+
+.item-card.selected .item-title {
+  font-weight: 600;
+}

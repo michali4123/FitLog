@@ -1,0 +1,26 @@
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* a link between the buttons (View photos) looks like a black button with gold letters */
+.item-actions a {
+  padding: 8px 12px;
+  border: 1px solid var(--black);
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.item-actions a:hover {
+  border-color: var(--gold);
+  background: var(--gold-shine);
+  color: var(--black);
+}

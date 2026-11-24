@@ -1,0 +1,8 @@
+.search-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.search-bar input {
+  width: 180px;
+}

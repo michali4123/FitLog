@@ -1,0 +1,37 @@
+.posts-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.posts-nav-links a {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.posts-nav-links a:hover {
+  color: var(--accent);
+}
+
+/* NavLink adds the "active" class to the link of the current part */
+.posts-nav-links a.active {
+  background: var(--black);
+  color: var(--gold-light);
+}
+
+.posts-nav-links .posts-nav-add {
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+}
+
+.posts-nav-links .posts-nav-add.active {
+  background: var(--accent);
+  color: var(--on-black);
+}

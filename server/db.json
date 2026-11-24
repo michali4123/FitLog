@@ -1,0 +1,341 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "password": "hildegard.org",
+      "email": "Sincere@april.biz",
+      "phone": "1-770-736-8031",
+      "address": {
+        "street": "Kulas Light",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "password": "anastasia.net",
+      "email": "Shanna@melissa.tv",
+      "phone": "010-692-6593",
+      "address": {
+        "street": "Victor Plains",
+        "city": "Wisokyburgh",
+        "zipcode": "90566-7771"
+      }
+    },
+    {
+      "username": "מיכל",
+      "password": "1234",
+      "name": "מיכל חסקל",
+      "email": "michalh4123@gmail.com",
+      "phone": "0556768046",
+      "address": {
+        "street": "גוטמכר 2",
+        "city": "בני ברק",
+        "zipcode": "12345"
+      },
+      "id": 3
+    },
+    {
+      "username": "אילה",
+      "password": "1234",
+      "name": "אילה גרינבוים",
+      "email": "Ayalagrinboim@gmail.com",
+      "phone": "0556768046",
+      "address": {
+        "street": "ה",
+        "city": "ה",
+        "zipcode": "1234"
+      },
+      "id": 4
+    }
+  ],
+  "todos": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Run 5 km in the park",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Leg day: squats 4x10",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Stretch for 15 minutes",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 4,
+      "title": "Yoga class at 18:00",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 5,
+      "title": "Swim 20 laps",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 6,
+      "title": "Upper body: push-ups 3x15",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 7,
+      "title": "Cardio: 30 minutes on the treadmill",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 8,
+      "title": "Plank 3 x 1 minute",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 9,
+      "title": "Drink 2 liters of water",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 10,
+      "title": "Rest day - light walk",
+      "completed": false
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "How I started running",
+      "body": "A year ago I could not run for 5 minutes.\nI started with 1 minute running, 1 minute walking - and today I run 5 km!"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "5 tips for leg day",
+      "body": "1. Warm up well.\n2. Start with squats while you are fresh.\n3. Keep your back straight.\n4. Do not skip the stretching.\n5. Eat protein after the workout."
+    },
+    {
+      "userId": 2,
+      "id": 3,
+      "title": "Why I love yoga",
+      "body": "Yoga makes me stronger and calmer at the same time.\nEven 20 minutes in the morning changes my whole day."
+    },
+    {
+      "userId": 3,
+      "id": 4,
+      "title": "My weekly workout plan",
+      "body": "Sunday - upper body\nMonday - cardio\nTuesday - legs\nWednesday - rest\nThursday - full body\nThe secret is to keep going every week."
+    },
+    {
+      "userId": 3,
+      "id": 5,
+      "title": "What to eat before a workout",
+      "body": "A banana or a slice of bread with peanut butter, about an hour before.\nNot too heavy - and drink water!"
+    },
+    {
+      "userId": 4,
+      "title": "ה",
+      "body": "ה",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "userId": 2,
+      "email": "Shanna@melissa.tv",
+      "name": "So inspiring",
+      "body": "This is exactly what I need to start running too!"
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "userId": 3,
+      "email": "michalh4123@gmail.com",
+      "name": "Great progress",
+      "body": "Well done! How many times a week did you run?"
+    },
+    {
+      "postId": 2,
+      "id": 3,
+      "userId": 3,
+      "email": "michalh4123@gmail.com",
+      "name": "Tip number 4",
+      "body": "I always skip the stretching... I will try to fix it."
+    },
+    {
+      "postId": 3,
+      "id": 4,
+      "userId": 1,
+      "email": "Sincere@april.biz",
+      "name": "Morning yoga",
+      "body": "Do you have a video you recommend for beginners?"
+    },
+    {
+      "postId": 4,
+      "id": 5,
+      "userId": 1,
+      "email": "Sincere@april.biz",
+      "name": "Nice plan",
+      "body": "Good idea to keep a rest day in the middle of the week."
+    },
+    {
+      "postId": 4,
+      "id": 6,
+      "userId": 2,
+      "email": "Shanna@melissa.tv",
+      "name": "Copying it",
+      "body": "I am going to try this plan next week!"
+    },
+    {
+      "postId": 5,
+      "id": 7,
+      "userId": 2,
+      "email": "Shanna@melissa.tv",
+      "name": "Banana team",
+      "body": "A banana before training works great for me too."
+    }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "id": 1,
+      "title": "Iron House Gym"
+    },
+    {
+      "userId": 3,
+      "id": 2,
+      "title": "Power Garage"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Pulse Fitness Center"
+    },
+    {
+      "userId": 2,
+      "id": 4,
+      "title": "Studio Flow"
+    },
+    {
+      "userId": 4,
+      "title": "אאא",
+      "id": 5
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 1,
+      "id": 1,
+      "title": "Main training floor",
+      "url": "/images/gyms/training-floor.jpg",
+      "thumbnailUrl": "/images/gyms/training-floor.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "Cardio zone",
+      "url": "/images/gyms/cardio-zone.jpg",
+      "thumbnailUrl": "/images/gyms/cardio-zone.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 3,
+      "title": "Dumbbell rack",
+      "url": "/images/gyms/dumbbell-rack.jpg",
+      "thumbnailUrl": "/images/gyms/dumbbell-rack.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 4,
+      "title": "Free weights area",
+      "url": "/images/gyms/free-weights.jpg",
+      "thumbnailUrl": "/images/gyms/free-weights.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 5,
+      "title": "Deadlift platform",
+      "url": "/images/gyms/deadlift.jpg",
+      "thumbnailUrl": "/images/gyms/deadlift.jpg"
+    },
+    {
+      "albumId": 2,
+      "id": 6,
+      "title": "Morning lifting session",
+      "url": "/images/gyms/morning-lift.jpg",
+      "thumbnailUrl": "/images/gyms/morning-lift.jpg"
+    },
+    {
+      "albumId": 2,
+      "id": 7,
+      "title": "Ready to lift",
+      "url": "/images/gyms/ready-to-lift.jpg",
+      "thumbnailUrl": "/images/gyms/ready-to-lift.jpg"
+    },
+    {
+      "albumId": 2,
+      "id": 8,
+      "title": "Push-ups with dumbbells",
+      "url": "/images/gyms/pushups.jpg",
+      "thumbnailUrl": "/images/gyms/pushups.jpg"
+    },
+    {
+      "albumId": 3,
+      "id": 9,
+      "title": "Bright training hall",
+      "url": "/images/gyms/training-floor.jpg",
+      "thumbnailUrl": "/images/gyms/training-floor.jpg"
+    },
+    {
+      "albumId": 3,
+      "id": 10,
+      "title": "Treadmill row",
+      "url": "/images/gyms/cardio-zone.jpg",
+      "thumbnailUrl": "/images/gyms/cardio-zone.jpg"
+    },
+    {
+      "albumId": 4,
+      "id": 11,
+      "title": "Floor workout",
+      "url": "/images/gyms/pushups.jpg",
+      "thumbnailUrl": "/images/gyms/pushups.jpg"
+    },
+    {
+      "albumId": 4,
+      "id": 12,
+      "title": "Weights corner",
+      "url": "/images/gyms/free-weights.jpg",
+      "thumbnailUrl": "/images/gyms/free-weights.jpg"
+    },
+    {
+      "albumId": 5,
+      "title": "א",
+      "url": "https://packages.altlinux.org/en/sisyphus/srpms/rars/",
+      "thumbnailUrl": "https://packages.altlinux.org/en/sisyphus/srpms/rars/",
+      "id": 13
+    },
+    {
+      "albumId": 5,
+      "title": "אאא",
+      "url": "https://streammovies.cc/watch/1813668",
+      "thumbnailUrl": "https://streammovies.cc/watch/1813668",
+      "id": 14
+    }
+  ]
+}

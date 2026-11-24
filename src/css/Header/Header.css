@@ -1,0 +1,58 @@
+/* the header is black, with a gold line under it */
+.header {
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background: var(--black);
+  color: var(--on-black);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(20, 18, 16, 0.18);
+}
+
+.header-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+}
+
+.header-title {
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* the links and the buttons (Info, Logout) look the same: thin gold frame */
+.header-nav a,
+.header-nav button {
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--on-black);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-nav a:hover,
+.header-nav button:hover:not(:disabled) {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+
+/* NavLink adds the "active" class to the link of the current page - shiny gold */
+.header-nav a.active {
+  border-color: var(--gold);
+  background: var(--gold-shine);
+  color: var(--black);
+}

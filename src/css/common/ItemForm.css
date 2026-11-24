@@ -1,0 +1,70 @@
+.item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+/* a note above the fields ("Posting as ...") */
+.form-note {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ---------- kinds of forms (the className of ItemForm) ---------- */
+
+/* a form in one line (add a task / album / photo) */
+.inline-form {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.inline-form .error-message {
+  flex-basis: 100%;
+}
+
+/* takes all the free place in the row (edit a task) */
+.grow {
+  flex: 1;
+}
+
+.grow input {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* a big form in a box (new post) */
+.big-form {
+  gap: 14px;
+  padding: 20px;
+}
+
+/* a form inside an item (edit a post, add a comment) */
+.nested-form {
+  padding: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+
+.item-card > .nested-form {
+  margin: 0 16px 12px;
+}

@@ -1,0 +1,206 @@
+/* General design of the whole site: colors, fonts, buttons, inputs, and the page layout.
+   The design of each component is in its own CSS file.
+   Theme: a luxury gym - light cream walls, black and gold. */
+
+:root {
+  --bg: #f6f3ee;           /* cream walls */
+  --surface: #ffffff;      /* cards and boxes */
+  --surface-2: #f1ede6;    /* boxes inside boxes */
+  --text: #1f1c19;
+  --text-muted: #7a726a;
+  --border: #e3ddd3;
+  --danger: #b3433b;
+
+  /* black */
+  --black: #141210;
+  --black-2: #23201c;      /* a little lighter black - frames on the black */
+  --on-black: #f6f3ee;     /* text on the black */
+  --on-black-muted: #b5aca0;
+
+  /* gold */
+  --gold: #c19a55;
+  --gold-light: #e2c68e;   /* gold text on the black */
+  --accent: #8a6633;       /* deep gold - gold text on the light background */
+  --gold-shine: linear-gradient(135deg, #9c7637 0%, #e2c68e 45%, #b48a45 70%, #e8d09d 100%);
+
+  --font-display: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* all the titles: tall letters, uppercase */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--accent);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* the main button of a form (Publish / Send / Add) - black with gold letters */
+button.primary {
+  border-color: var(--black);
+  background: var(--black);
+  color: var(--gold-light);
+}
+
+/* on hover it becomes shiny gold */
+button.primary:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: var(--gold-shine);
+  color: var(--black);
+}
+
+button.danger:hover:not(:disabled) {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---------- page layout - used by all the pages ---------- */
+
+/* a page: its parts one under the other */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* a white box with a soft frame */
+.card {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(60, 45, 30, 0.05);
+}
+
+/* the bar above a list: search, sort, add */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* the site name "FitLog" (in the Header and on the login page) */
+.brand {
+  display: block;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* a thin shiny gold line */
+.gold-line {
+  height: 3px;
+  background: var(--gold-shine);
+}
+
+/* a small label ("Mine", "You") - black with gold letters */
+.badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

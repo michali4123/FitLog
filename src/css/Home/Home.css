@@ -1,0 +1,26 @@
+/* the welcome page: one light box with a gold line on the side and a gold name */
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--gold);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(60, 45, 30, 0.05);
+}
+
+.home h2 {
+  font-size: 34px;
+}
+
+/* the name of the user in gold */
+.home h2 span {
+  color: var(--accent);
+}
+
+.home p {
+  margin: 0;
+  color: var(--text-muted);
+}

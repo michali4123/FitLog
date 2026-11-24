@@ -1,0 +1,9 @@
+/* a workout that is done: gray line on the side, the title is crossed out */
+.item-card.done {
+  border-inline-start-color: var(--border);
+}
+
+.item-card.done .item-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
