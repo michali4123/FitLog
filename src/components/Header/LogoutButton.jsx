@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../js/services/authService";
+import { useUser } from "../../js/hooks/useUser";
 
-// Logs the user out (deletes him from LS) and goes back to the login page.
+// Logs the user out (deletes him from the Context and LS) and goes back to the login page.
 export default function LogoutButton() {
   const navigate = useNavigate();
+  const { logoutUser } = useUser();
 
   function handleLogout() {
-    logout();
+    logoutUser();
     navigate("/login", { replace: true });
   }
 

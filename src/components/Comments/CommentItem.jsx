@@ -1,3 +1,4 @@
+import { useUser } from "../../js/hooks/useUser";
 import { useEditMode } from "../../js/hooks/useEditMode";
 import { COMMENT_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
@@ -5,7 +6,8 @@ import ItemActions from "../common/ItemActions";
 
 // One comment: who wrote it, the title and the text.
 // Edit / Delete only on my comments.
-export default function CommentItem({ comment, user, onUpdate, onDelete }) {
+export default function CommentItem({ comment, onUpdate, onDelete }) {
+  const { user } = useUser();
   const editMode = useEditMode(comment.id, onUpdate);
   const isMine = comment.userId === user.id;
 

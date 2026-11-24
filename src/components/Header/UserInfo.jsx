@@ -1,8 +1,11 @@
+import { useUser } from "../../js/hooks/useUser";
 import "../../css/Header/UserInfo.css";
 
 // A window on top of the page with the user's personal details.
 // Clicking outside the window closes it.
-export default function UserInfo({ user, onClose }) {
+export default function UserInfo({ onClose }) {
+  const { user } = useUser();
+
   // a click inside the window does not reach the backdrop, so it does not close it
   function keepWindowOpen(event) {
     event.stopPropagation();

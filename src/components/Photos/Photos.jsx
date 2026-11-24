@@ -1,4 +1,5 @@
-import { Link, Navigate, useOutletContext, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { useServerList } from "../../js/hooks/useServerList";
 import { PHOTO_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
@@ -17,7 +18,7 @@ function addThumbnail(photoValues) {
 // Photos page of one album: loads the photos part by part.
 // The album id comes from the URL: /:username/albums/:albumId/photos
 export default function Photos() {
-  const { id: userId, username } = useOutletContext(); // the logged-in user, from UserPage
+  const { id: userId, username } = useUser().user; // the logged-in user, from UserContext
   const { albumId } = useParams();
   // the album is asked together with the user id,
   // so the server returns it ONLY if it belongs to the logged-in user

@@ -1,5 +1,6 @@
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { register } from "../../js/services/authService";
+import { useUser } from "../../js/hooks/useUser";
 import { PROFILE_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
 
@@ -8,12 +9,14 @@ import ItemForm from "../common/ItemForm";
 export default function CompleteProfile() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { loginUser } = useUser();
   const account = location.state; // username + password from the register screen
 
   if (!account) return <Navigate to="/register" replace />; // got here without registering
 
   async function saveProfile(profileValues) {
     const newUser = await register(account, profileValues);
+    loginUser(newUser); // the new user is logged in right away
     navigate(`/${newUser.username}`, { replace: true });
     return true;
   }

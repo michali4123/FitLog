@@ -1,10 +1,11 @@
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import ItemRow from "../common/ItemRow";
 import ItemActions from "../common/ItemActions";
 
 // One album row: id, title, a link to its photos, and Delete.
 export default function AlbumItem({ album, onDelete }) {
-  const { username } = useOutletContext(); // the logged-in user, from UserPage
+  const { username } = useUser().user; // the logged-in user, from UserContext
   const photosUrl = `/${username}/albums/${album.id}/photos`;
 
   function deleteAlbum() {

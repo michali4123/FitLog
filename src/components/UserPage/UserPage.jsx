@@ -1,11 +1,11 @@
 import { Navigate, Outlet, useLocation, useParams } from "react-router-dom";
 import Header from "../Header/Header";
-import { getCurrentUser } from "../../js/storage/currentUser";
+import { useUser } from "../../js/hooks/useUser";
 
 // The user's page (/:username): the header on top,
 // and under it the current inner page (todos / albums / photos...).
 export default function UserPage() {
-  const user = getCurrentUser();
+  const { user } = useUser();
   const { username } = useParams(); // the username written in the URL
   const location = useLocation();
 
@@ -20,9 +20,9 @@ export default function UserPage() {
 
   return (
     <>
-      <Header user={user} />
-      {/* the inner pages get the user with useOutletContext() */}
-      <Outlet context={user} />
+      <Header />
+      {/* the inner pages get the user with useUser() */}
+      <Outlet />
     </>
   );
 }

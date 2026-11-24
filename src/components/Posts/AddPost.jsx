@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { POST_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
 
 // Add a new post (/:username/posts/new).
 // The post is always saved for the LOGGED-IN user (userId is not a field in the form),
 // so a user can add a post only for himself.
-export default function AddPost({ user, onAdd }) {
+export default function AddPost({ onAdd }) {
   const navigate = useNavigate();
+  const { user } = useUser();
   const myPostsUrl = `/${user.username}/posts`;
 
   async function publishPost(newPostValues) {

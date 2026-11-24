@@ -23,7 +23,8 @@ function hasEmptyField(values) {
   return Object.values(values).some((value) => value === "");
 }
 
-function isSameValues(firstValues, secondValues) {
+function isSameValues(
+  firstValues, secondValues) {
   return Object.keys(firstValues).every((fieldName) => firstValues[fieldName] === secondValues[fieldName]);
 }
 

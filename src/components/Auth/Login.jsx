@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { login } from "../../js/services/authService";
+import { useUser } from "../../js/hooks/useUser";
 import { LOGIN_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
 
@@ -8,9 +9,11 @@ import ItemForm from "../common/ItemForm";
 // A wrong username / password throws an error - ItemForm shows its message.
 export default function Login() {
   const navigate = useNavigate();
+  const { loginUser } = useUser();
 
   async function handleLogin(loginValues) {
     const user = await login(loginValues.username, loginValues.password);
+    loginUser(user); // save the user in the Context (and LS)
     navigate(`/${user.username}`, { replace: true });
     return true;
   }

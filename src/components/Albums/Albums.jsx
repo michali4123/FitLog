@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { useServerList } from "../../js/hooks/useServerList";
 import { useSearch } from "../../js/hooks/useSearch";
 import { ALBUM_FIELDS, ID_TITLE_SEARCH_OPTIONS } from "../../js/config/fields";
@@ -11,7 +11,7 @@ import AlbumItem from "./AlbumItem";
 // Main albums page: loads the albums of the logged-in user only.
 // Opening an album goes to its own URL: /:username/albums/:albumId/photos
 export default function Albums() {
-  const { id: userId } = useOutletContext(); // the logged-in user, from UserPage
+  const { id: userId } = useUser().user; // the logged-in user, from UserContext
   const albums = useServerList("albums", { userId }, "album");
   const search = useSearch(albums.items, "title");
 

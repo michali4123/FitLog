@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { useServerList } from "../../js/hooks/useServerList";
 import { useSearch } from "../../js/hooks/useSearch";
 import { TODO_FIELDS, TODO_SEARCH_OPTIONS, TODO_SORT_OPTIONS } from "../../js/config/fields";
@@ -22,7 +22,7 @@ function sortTodos(todos, sortKey) {
 
 // Main tasks page: loads the tasks of the logged-in user only.
 export default function Todos() {
-  const { id: userId } = useOutletContext(); // the logged-in user, from UserPage
+  const { id: userId } = useUser().user; // the logged-in user, from UserContext
   const todos = useServerList("todos", { userId }, "workout");
   const search = useSearch(todos.items, "title");
   const [sortKey, setSortKey] = useState("id");

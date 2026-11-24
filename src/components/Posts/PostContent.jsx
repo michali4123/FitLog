@@ -3,7 +3,7 @@ import Comments from "../Comments/Comments";
 import "../../css/Posts/PostContent.css";
 
 // The content of the selected post + a button that shows its comments.
-export default function PostContent({ post, user }) {
+export default function PostContent({ post }) {
   const [showComments, setShowComments] = useState(false);
 
   function toggleComments() {
@@ -21,7 +21,7 @@ export default function PostContent({ post, user }) {
         {commentsButtonText}
       </button>
 
-      {showComments && <Comments post={post} user={user} />}
+      {showComments && <Comments post={post} />}
     </div>
   );
 }

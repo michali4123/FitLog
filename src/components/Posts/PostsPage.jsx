@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Navigate, useOutletContext, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { useServerList } from "../../js/hooks/useServerList";
 import { useSearch } from "../../js/hooks/useSearch";
 import ErrorMessage from "../common/ErrorMessage";
@@ -14,7 +15,7 @@ const POSTS_VIEWS = ["", "all", "new"];
 // Posts page: /posts = my posts, /posts/all = all posts, /posts/new = add.
 // All the posts are loaded once - "my posts" are filtered from them.
 export default function PostsPage() {
-  const user = useOutletContext(); // the logged-in user, from UserPage
+  const { user } = useUser(); // the logged-in user, from UserContext
   const view = useParams()["*"];
   const posts = useServerList("posts", {}, "post");
   const search = useSearch(posts.items, "title");
@@ -39,7 +40,6 @@ export default function PostsPage() {
       <SinglePost
         key={post.id}
         post={post}
-        user={user}
         isSelected={post.id === selectedPostId}
         onSelect={toggleSelectedPost}
         onUpdate={posts.updateItem}
@@ -54,7 +54,7 @@ export default function PostsPage() {
 
   const viewElement =
     view === "new" ? (
-      <AddPost user={user} onAdd={posts.addItem} />
+      <AddPost onAdd={posts.addItem} />
     ) : (
       <>
         <h2>{listTitle}</h2>
@@ -69,7 +69,7 @@ export default function PostsPage() {
 
   return (
     <section className="page">
-      <PostsNav view={view} user={user} search={search} />
+      <PostsNav view={view} search={search} />
       <ErrorMessage message={posts.errorMessage} />
       {viewElement}
     </section>

@@ -1,8 +1,7 @@
 import { api } from "../api/client";
-import { saveCurrentUser, removeCurrentUser } from "../storage/currentUser";
 
-// All the work of login / register / logout against the server and LS.
-// The components only show the forms and call these functions.
+// All the work of login / register against the server.
+// Saving the logged-in user (LS + state) happens in UserContext.
 
 // Returns the user with this username, or undefined if there is no such user.
 async function findUser(username) {
@@ -11,14 +10,11 @@ async function findUser(username) {
 }
 
 // Returns the user if the username + password are correct, otherwise throws an error.
-// A user that logged in is saved in LS.
 export async function login(username, password) {
   const user = await findUser(username);
   if (!user || user.password !== password) {
     throw new Error("Wrong username or password.");
   }
-
-  saveCurrentUser(user);
   return user;
 }
 
@@ -28,10 +24,10 @@ export async function isUsernameTaken(username) {
   return user !== undefined;
 }
 
-// Saves a new user on the server and logs him in (saves in LS).
+// Saves a new user on the server and returns it.
 // account = { username, password }, details = the fields of the details form (already trimmed)
 export async function register(account, details) {
-  const newUser = await api("users", {
+  return api("users", {
     type: "ADD",
     item: {
       username: account.username,
@@ -46,11 +42,4 @@ export async function register(account, details) {
       },
     },
   });
-
-  saveCurrentUser(newUser);
-  return newUser;
-}
-
-export function logout() {
-  removeCurrentUser();
 }

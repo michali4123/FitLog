@@ -1,3 +1,4 @@
+import { useUser } from "../../js/hooks/useUser";
 import { useEditMode } from "../../js/hooks/useEditMode";
 import { POST_FIELDS } from "../../js/config/fields";
 import ItemRow from "../common/ItemRow";
@@ -7,7 +8,8 @@ import PostContent from "./PostContent";
 
 // One post: the row (id, title, buttons), the edit form, and the content when selected.
 // Edit / Delete only on my posts.
-export default function SinglePost({ post, user, isSelected, onSelect, onUpdate, onDelete }) {
+export default function SinglePost({ post, isSelected, onSelect, onUpdate, onDelete }) {
+  const { user } = useUser();
   const editMode = useEditMode(post.id, onUpdate);
   const isMine = post.userId === user.id;
 
@@ -49,7 +51,7 @@ export default function SinglePost({ post, user, isSelected, onSelect, onUpdate,
         />
       )}
 
-      {isSelected && <PostContent post={post} user={user} />}
+      {isSelected && <PostContent post={post} />}
     </li>
   );
 }

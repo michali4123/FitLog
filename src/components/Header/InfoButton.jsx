@@ -2,7 +2,7 @@ import { useState } from "react";
 import UserInfo from "./UserInfo";
 
 // The Info button: opens a window with the user's details.
-export default function InfoButton({ user }) {
+export default function InfoButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   function openInfo() {
@@ -16,7 +16,7 @@ export default function InfoButton({ user }) {
   return (
     <>
       <button type="button" onClick={openInfo}>Info</button>
-      {isOpen && <UserInfo user={user} onClose={closeInfo} />}
+      {isOpen && <UserInfo onClose={closeInfo} />}
     </>
   );
 }

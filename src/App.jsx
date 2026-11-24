@@ -9,33 +9,37 @@ import Todos from "./components/Todos/Todos";
 import Albums from "./components/Albums/Albums";
 import Photos from "./components/Photos/Photos";
 import PostsPage from "./components/Posts/PostsPage";
+import UserProvider from "./components/UserProvider/UserProvider";
 
-// The app's routes only - no logic here.
+// The app's routes + the Provider of the logged-in user - no logic here.
 export default function App() {
   return (
-    <main className="app">
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+    // every component inside can get the logged-in user with useUser()
+    <UserProvider>
+      <main className="app">
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* login / register pages: the design + the current form inside it */}
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/register/details" element={<CompleteProfile />} />
-        </Route>
+          {/* login / register pages: the design + the current form inside it */}
+          <Route element={<AuthLayout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/register/details" element={<CompleteProfile />} />
+          </Route>
 
-        {/* the user's page: Header + the inner page under it */}
-        <Route path="/:username" element={<UserPage />}>
-          {/* /:username itself - the welcome page */}
-          <Route index element={<Home />} />
-          <Route path="todos" element={<Todos />} />
-          {/* posts page: /posts = my posts, /posts/all = all posts, /posts/new = add
-              (one route - PostsPage reads the rest of the URL with useParams) */}
-          <Route path="posts/*" element={<PostsPage />} />
-          <Route path="albums" element={<Albums />} />
-          <Route path="albums/:albumId/photos" element={<Photos />} />
-        </Route>
-      </Routes>
-    </main>
+          {/* the user's page: Header + the inner page under it */}
+          <Route path="/:username" element={<UserPage />}>
+            {/* /:username itself - the welcome page */}
+            <Route index element={<Home />} />
+            <Route path="todos" element={<Todos />} />
+            {/* posts page: /posts = my posts, /posts/all = all posts, /posts/new = add
+                (one route - PostsPage reads the rest of the URL with useParams) */}
+            <Route path="posts/*" element={<PostsPage />} />
+            <Route path="albums" element={<Albums />} />
+            <Route path="albums/:albumId/photos" element={<Photos />} />
+          </Route>
+        </Routes>
+      </main>
+    </UserProvider>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useUser } from "../../js/hooks/useUser";
 import { useServerList } from "../../js/hooks/useServerList";
 import { COMMENT_FIELDS } from "../../js/config/fields";
 import ItemForm from "../common/ItemForm";
@@ -9,7 +10,8 @@ import "../../css/Comments/Comments.css";
 
 // The comments of one post. Only OTHER users can comment on a post,
 // and every user can edit / delete only his own comments.
-export default function Comments({ post, user }) {
+export default function Comments({ post }) {
+  const { user } = useUser();
   const comments = useServerList("comments", { postId: post.id }, "comment");
   const [isAddFormOpen, setIsAddFormOpen] = useState(false);
   const canAddComment = post.userId !== user.id;
@@ -39,7 +41,6 @@ export default function Comments({ post, user }) {
       <CommentItem
         key={comment.id}
         comment={comment}
-        user={user}
         onUpdate={comments.updateItem}
         onDelete={comments.deleteItem}
       />

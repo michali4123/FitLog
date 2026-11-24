@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { useUser } from "../../js/hooks/useUser";
 import { ID_TITLE_SEARCH_OPTIONS } from "../../js/config/fields";
 import SearchBar from "../common/SearchBar";
 import "../../css/Posts/PostsNav.css";
 
 // The bar of the posts page: the links (my / all / new) and the search.
-export default function PostsNav({ view, user, search }) {
+export default function PostsNav({ view, search }) {
+  const { user } = useUser();
   const postsUrl = `/${user.username}/posts`;
   const showSearch = view !== "new"; // no search on the add form
 
